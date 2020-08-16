@@ -45,6 +45,7 @@ button {
     color: white;
     font-size: 16px;
     transition: background .3s ease;
+    margin-right: 10px;
 }
 
 button:hover {
@@ -180,4 +181,100 @@ button:disabled {
     list-style-type: none;
     font-weight: 300;
     padding: 12px 24px 0 24px;
+}
+
+.imageWrapper {
+    max-height: 300px;
+    margin-bottom: 20px;
+}
+.imageWrapper img {
+    max-height: 300px;
+    width: auto;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.drop-zone {
+  max-width: 300px;
+  min-width: 170px;
+    height: 50px;
+    padding: 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    color: #7c5cbf;
+    border-radius: 6px;
+    background: #fff;
+    border: 1px solid #7c5cbf;
+    position: relative;
+    margin-right: 25px;
+}
+
+.drop-zone--over {
+  border-style: solid;
+}
+
+.drop-zone__input {
+  display: none;
+}
+
+.drop-zone__thumb {
+  max-width: 300px;
+  min-width: 170px;
+  height: 25px;
+  color: #7c5cbf;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 35px;
+ 
+}
+
+.drop-zone__thumb::after {
+  content: attr(data-label);
+  bottom: 0;
+  left: 0;
+  padding: 5px 0;
+  color: #7c5cbf;
+  font-size: 14px;
+  text-align: center;
+}
+
+ .drop-zone:empty::before {
+    /*color: rgba(128, 128, 128, 0.4);;*/
+    color: #7c5cbf;
+    content: 'Click here to upload image';
+}
+.btn-close {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 8px;
+    top: 0;
+    color: #7c5cbf;
+    background-color: red;
+}
+button:focus {
+    outline: none;
+}
+button#remove_img {
+    width: 20px;
+    height: 20px;
+    margin-left: -20px;
+    z-index: 10;
+    padding: 0;
+    background: transparent;
+    color: #7c5cbf;
+    font-weight: 900;
+}
+.hidden {
+    display: none;
+}
+.showEl {
+    display: block;
 }

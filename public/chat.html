@@ -4,7 +4,8 @@
 <head>
     <title>Chat App</title>
     <link rel="icon" href="/img/favicon.png">
-    <link rel="stylesheet" href="/css/styles.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -18,9 +19,16 @@
             <div class="compose">
                 <form id="message-form">
                     <input name="message" placeholder="Message" required autocomplete="off">
-                    <button>Send</button>
+                    <button id="sendd">Send</button>
+                    
                 </form>
+                <div data-placeholder='Click here to upload image' class="drop-zone">
+                    <span class="drop-zone__prompt">Click here to upload image</span>
+                    <input type="file" id="photo" class="drop-zone__input">
+                </div>
+                <button id="remove_img" class="hidden">X</button>
                 <button id="send-location">Send location</button>
+
             </div>
         </div>
     </div>
@@ -33,7 +41,17 @@
                 </p>
                 <p>{{message}}</p>
             </div>
-        </script>
+    </script>
+
+    <script id="image-template" type="text/html">
+            <div class="imgHolder">
+                 <p>
+                    <span class="message__name">{{username}}</span>
+                    <span class="message__meta">{{createdAt}}</span>
+                </p>
+                <img src="{{image}}"></p> 
+            </div>
+    </script>
 
     <script id="location-message-template" type="text/html">
             <div class="message">
@@ -43,7 +61,7 @@
                 </p>
                 <p><a href="{{url}}" target="_blank">My current location</a></p>
             </div>
-        </script>
+    </script>
 
     <script id="sidebar-template" type="text/html">
         <h2 class="room-title">{{room}}</h2>
